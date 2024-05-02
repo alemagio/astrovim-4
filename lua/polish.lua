@@ -4,7 +4,7 @@ if true then return end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
 -- things like custom filetypes. This just pure lua so anything that doesn't
 -- fit in the normal config locations above can go here
 
--- Set up custom filetypes
+-- Set up custom filetypes test
 vim.filetype.add {
   extension = {
     foo = "fooscript",
