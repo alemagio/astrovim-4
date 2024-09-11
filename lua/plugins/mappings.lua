@@ -24,8 +24,6 @@ return {
           ["<leader>pd"] = { "<cmd>Telescope dir find_files<CR>", desc = "Find files in directory" },
           -- trouble
 
-          ["<leader>xx"] = { "<cmd>TroubleToggle<CR>", desc = "Toggle Trouble" },
-
           -- quick save
           -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
         },
