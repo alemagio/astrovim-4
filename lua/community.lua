@@ -21,4 +21,5 @@ return {
   { import = "astrocommunity.git.diffview-nvim" },
   { import = "astrocommunity.utility.lua-json5" },
   { import = "astrocommunity.diagnostics.trouble-nvim", opts = { position = "right", width = 100 } },
+  { import = "astrocommunity.completion.codeium-nvim" },
 }
