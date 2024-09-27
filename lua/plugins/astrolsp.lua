@@ -1,10 +1,8 @@
-if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
-
 -- AstroLSP allows you to customize the features in AstroNvim's LSP configuration engine
 -- Configuration documentation can be found with `:h astrolsp`
 -- NOTE: We highly recommend setting up the Lua Language Server (`:LspInstall lua_ls`)
 --       as this provides autocomplete and documentation while editing
-
+local util = require "lspconfig.util"
 ---@type LazySpec
 return {
   "AstroNvim/astrolsp",
@@ -40,12 +38,45 @@ return {
     },
     -- enable servers that you already have installed without mason
     servers = {
-      -- "pyright"
+      "lua_ls",
+      "biome",
     },
     -- customize language server configuration options passed to `lspconfig`
     ---@diagnostic disable: missing-fields
     config = {
       -- clangd = { capabilities = { offsetEncoding = "utf-8" } },
+      biome = {
+        cmd = { "biome", "lsp-proxy" },
+        filetypes = {
+          "javascript",
+          "javascriptreact",
+          "json",
+          "jsonc",
+          "typescript",
+          "typescript.tsx",
+          "typescriptreact",
+          "astro",
+          "svelte",
+          "vue",
+          "css",
+        },
+        root_dir = util.root_pattern("biome.json", "biome.jsonc"),
+        single_file_support = false,
+      },
+      docs = {
+        description = [[
+https://biomejs.dev
+
+Toolchain of the web. [Successor of Rome](https://biomejs.dev/blog/annoucing-biome).
+
+```sh
+npm install [-g] @biomejs/biome
+```
+]],
+        default_config = {
+          root_dir = [[root_pattern('biome.json', 'biome.jsonc')]],
+        },
+      },
     },
     -- customize how language servers are attached
     handlers = {
