@@ -8,7 +8,6 @@ return {
   { import = "astrocommunity.pack.lua" },
   { import = "astrocommunity.pack.typescript" },
   { import = "astrocommunity.pack.vue" },
-  { import = "astrocommunity.pack.python" },
   { import = "astrocommunity.pack.tailwindcss" },
   -- { import = "astrocommunity.completion.copilot-lua-cmp" },
   { import = "astrocommunity.colorscheme.catppuccin" },
